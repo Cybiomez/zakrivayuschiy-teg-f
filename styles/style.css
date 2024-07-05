@@ -22,3 +22,26 @@
   background-color: var(--backgroumnd-color);
   color: var(--accent-color);
 }
+
+.button_save::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background-color: var(--accent-color);
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card__like-button::after,
+.button_save:hover::after {
+  transform: scale(1, 1);
+}
+
+.button__text,
+.floppy-icon {
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 1;
+  color: var(--btn-txt-color);
+}
