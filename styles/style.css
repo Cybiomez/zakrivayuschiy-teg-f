@@ -43,12 +43,6 @@
   inline-size: var(--content-section__inline-size);
 }
 
-@media (width <= 375px) {
-  .content-section__inline-size {
-    inline-size: 100%;
-  }
-}
-
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -58,7 +52,7 @@
 .header {
   display: grid;  
   grid-template-rows: 2fr 1fr;
-  block-size: 368px;
+  block-size: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
   justify-content: center;
   align-items: end;
   margin: 100px auto;
@@ -110,7 +104,7 @@
   display: grid;
   justify-content: start;
   padding-inline-start: 18px;
-  gap: 10px;
+  gap: clamp(0.5rem, 0.456rem + 0.19vw, 0.625rem);
   margin: 25px;
 }
 
@@ -273,7 +267,17 @@
   font-family: var(--main-font-family);
   font-weight: var(--normal-font-weight);
   font-size: 18px;
-  line-height: 20px;
+  line-height: 21px;
+  letter-spacing: 1px;
+}
+
+.card-8 .card__text{
+  letter-spacing: 0px;
+  line-height: 22.5px;
+}
+
+.card-2 .card__text{
+  letter-spacing: 0px;
 }
 
 .card__buttons {
@@ -639,3 +643,54 @@ svg:not(:root) {
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.card-1 .card__image {
+  filter: none;
+}
+
+.card-2 .card__image {
+  filter: grayscale(80%);
+}
+
+.card-3 .card__image {
+  filter: saturate(300%);
+  
+}
+
+.card-4 .card__image {
+  filter: saturate(180%) contrast(120%) sepia(0.5);
+}
+
+.card-5 .card__image {
+  filter: invert(80%);
+}
+
+.card-6 .card__image {
+  filter: saturate(180%) sepia(0.9);
+}
+
+.card-7 .card__image {
+  filter: blur(10px);
+}
+
+.card-8 .card__image {
+  filter: hue-rotate(0.2turn) sepia(0.5) blur(2px);
+}
+
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+@media (width <= 375px) {
+  .content-section__inline-size {
+    inline-size: 100%;
+  }
+  
+  .floppy-icon__save-button {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+}
