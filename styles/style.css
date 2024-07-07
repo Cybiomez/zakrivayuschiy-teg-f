@@ -20,14 +20,6 @@
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-@supports (font-variation-settings: normal) {
-  .page {
-    font-family: var(--main-font-family);
-    font-variation-settings: "wght" var(--normal-font-weight);
-  }
-}
-
-
 .page {
   position: relative;
   display: grid;
@@ -45,6 +37,13 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--normal-font-weight);
+}
+
+@supports (font-variation-settings: "wght" var(--normal-font-weight)) {
+  .page {
+    font-family: var(--main-font-family);
+    font-variation-settings: "wght" var(--normal-font-weight);
+  }
 }
 
 .content-section__inline-size {
