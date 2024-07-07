@@ -50,7 +50,7 @@
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 .header {
-  display: grid;  
+  display: grid;
   grid-template-rows: 2fr 1fr;
   justify-content: center;
   align-items: end;
