@@ -5,8 +5,10 @@
 
     /* ------------- font settings -------------- */
    
-    --main-font-family: 'Inter-Variable', sans-serif;
-    --accent-font-family: 'PressStart2P', fantasy;
+    --main-font-family: "Inter-Variable", sans-serif;
+    --accent-font-family: "PressStart2P", fantasy;
+
+    --font-variation-settings: 400 785;
 
     --normal-font-weight: 400;
     --bold-font-weight: 700;

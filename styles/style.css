@@ -20,6 +20,13 @@
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-font-family);
+  }
+}
+
+
 .page {
   position: relative;
   display: grid;
@@ -36,7 +43,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--normal-font-weight);
+  font-variation-settings: "wght" var(--font-variation-settings);
 }
 
 .content-section__inline-size {
@@ -51,14 +58,13 @@
 
 .header {
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 1.88fr 1fr;
   justify-content: center;
   align-items: end;
   margin: 100px auto;
   border: 2px solid var(--accent-color);
   font-family: var(--accent-font-family);
   background-color: var(--main-color);
-  /*block-size: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);*/
 }
 
 .header-logo-group {
@@ -66,12 +72,13 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  
 }
 
 .logo-link {
   font-weight: var(--normal-font-weight);
   font-size: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
-  line-height: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
+  line-height: clamp(3.063rem, 2.82rem + 1.03vw, 3.75rem);
   text-decoration: none;
 }
 
@@ -84,7 +91,7 @@
 .header-title {
   font-weight: var(--normal-font-weight);
   font-size: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
-  line-height: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
+  line-height: clamp(0.875rem, 0.765rem + 0.47vw, 1.188rem);
   text-transform: uppercase;
 }
 
@@ -190,13 +197,11 @@
 }
 
 .card__title {
-  padding: 
-    calc(-1 * clamp(0.188rem, 0.116rem + 0.15vw, 0.25rem)) 
-    10px 
-    calc(-1 * clamp(0.188rem, -0.027rem + 0.45vw, 0.375rem));
+  padding: 3px 10px;
   font-weight: var(--bold-font-weight);
+  font-family: var(--main-font-family);
   font-size: 18px;
-  line-height: 25px;
+  line-height: 24px;
 }
 
 .image-container {
@@ -218,7 +223,7 @@
  font-size: 14px;
  line-height: 14px;
  text-shadow: 0 0 0 1px var(--stroke-color);
- inset-inline-end: clamp(0.813rem, -0.045rem + 1.79vw, 1.563rem);
+ inset-inline-end: clamp(0.813rem, 0.548rem + 1.13vw, 1.563rem);
  inset-block-start: 25px;
  mix-blend-mode: hard-light;
 }
@@ -233,7 +238,7 @@
 .card__content {
   display: grid;
   gap: 25px;
-  padding: 25px;
+  padding: 24px;
 }
 
 .card__text {
@@ -250,7 +255,7 @@
   display: flex;
   justify-self: end;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
 }
 
 .card__icon-button {
@@ -277,10 +282,6 @@
 .card__like-button {
   inline-size: 130px;
   block-size: 40px;
-}
-
-.card__like-button {
-  text-transform: uppercase;
 }
 
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -553,5 +554,13 @@ svg:not(:root) {
   .floppy-icon__save-button {
     inline-size: 28px;
     block-size: 28px;
+  }
+
+  .header {
+    grid-template-rows: 1.65fr 1fr;
+  }
+  
+  .card__title {
+    padding: 4px 10px 6px;
   }
 }
