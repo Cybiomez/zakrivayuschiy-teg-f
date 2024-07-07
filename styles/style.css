@@ -14,34 +14,628 @@
 
 */
 
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
 .page {
+  position: relative;
+  display: grid;
+  align-content: start;
+  justify-content: center;
+  align-items: start;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font-family), serif;
-  font-variation-settings: "wght" var(--paragraph-font-weight);
-  background-color: var(--backgroumnd-color);
+  font-family: var(--main-font-family);
+  font-variation-settings: var(--normal-font-weight);
+  background-color: var(--main-color);
   color: var(--accent-color);
+  background: var(--background-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
 }
 
-.button_save::after {
-  content: "";
-  inset: 0;
-  position: absolute;
-  background-color: var(--accent-color);
-  transform: scale(0, 1);
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
+.content-section__inline-size {
+  inline-size: var(--content-section__inline-size);
 }
 
-.card__like-button::after,
-.button_save:hover::after {
-  transform: scale(1, 1);
+@media (width <= 375px) {
+  .content-section__inline-size {
+    inline-size: 100%;
+  }
 }
 
-.button__text,
-.floppy-icon {
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.header {
+  display: grid;  
+  grid-template-rows: 2fr 1fr;
+  block-size: 368px;
+  justify-content: center;
+  align-items: end;
+  margin: 100px auto;
+  background-color: var(--main-color);
+  border: 2px solid var(--accent-color);
+  font-family: var(--accent-font-family);
+}
+
+.header-logo-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-link:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.logo-text{
+  font-weight: var(--normal-font-weight);
+  font-size: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
+  line-height: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
+}
+
+.header-title {
+  font-weight: var(--normal-font-weight);
+  font-size: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
+  line-height: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
+  text-transform: uppercase;
+}
+
+.theme-menu {
+  display: grid;
+  justify-self: center;
+}
+
+.header__theme-menu {
+
+}
+
+.theme-menu__list {
+  display: grid;
+  justify-content: start;
+  padding-inline-start: 18px;
+  gap: 10px;
+  margin: 25px;
+}
+
+.theme-menu__item {
+  
+}
+
+.theme-menu__button {
   position: relative;
-  mix-blend-mode: difference;
-  z-index: 1;
-  color: var(--btn-txt-color);
+  outline: none;
+  border: none;
+  background: none;
+  font-weight: var(--normal-font-weight);
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
 }
+
+.theme-menu__button:hover {
+  cursor: pointer;
+  opacity: 60%;
+ }
+
+ .theme-menu__button:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  opacity: 60%;
+ }
+
+ .theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-top: 0;
+  background-color: var(--accent-color);
+  opacity: 100%;
+  transition: width 0.3s, opacity 0.3s;
+ }
+
+ .theme-menu__button:focus::after {
+  width: 100%;
+  opacity: 60%;
+ }
+
+ .theme-menu__button:disabled {
+  transition: opacity 0.3s;
+ }
+
+ .theme-menu__button:disabled {
+  opacity: 60%;
+  pointer-events: none;
+ }
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  font-size: 16px;
+  line-height: 16px;
+  inset-inline-start: -15px;
+  margin: 0;
+  padding: 0;
+  animation: pointer 0.5s alternate ease-in-out infinite;
+}
+
+@keyframes pointer {
+  from {
+    inset-inline-start: -15px;
+  }
+
+  to {
+    inset-inline-start: -11px;
+  }
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.main {
+  display: grid;
+  justify-items: center;
+  gap: 50px;
+  margin: 0 auto 100px;
+}
+
+.card-section {
+  display: grid;
+  gap: 50px;
+}
+
+.card-section__card-list {
+  display: grid;
+  gap: 50px;
+}
+
+.card-list__item {
+  
+}
+
+.card {
+  background-color: var(--main-color);
+  border: 2px solid var(--accent-color);
+}
+
+.card__title {
+  font-weight: var(--bold-font-weight);
+  font-size: 18px;
+  line-height: 25px;
+  padding: 
+    calc(-1 * clamp(0.188rem, 0.116rem + 0.15vw, 0.25rem)) 
+    10px 
+    calc(-1 * clamp(0.188rem, -0.027rem + 0.45vw, 0.375rem));
+}
+
+.image-container {
+  position: relative;
+  background-color: var(--main-color);
+}
+
+.card__image {
+  border: 0 solid var(--accent-color);
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  inline-size: 100%;
+}
+
+.watermark {
+ position: absolute;
+ inset-inline-end: clamp(0.813rem, -0.045rem + 1.79vw, 1.563rem);
+ inset-block-start: 25px;
+ font-family: var(--accent-font-family);
+ font-weight: var(--normal-font-weight);
+ font-size: 14px;
+ line-height: 14px;
+ text-shadow: 0 0 0 1px var(--stroke-color);
+ mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 2px #000) {
+  .watermark {
+   -webkit-text-stroke: 0.5px var(--stroke-color);
+   text-shadow: none;
+  }
+}
+
+.card__content {
+  padding: 25px;
+  display: grid;
+  gap: 25px;
+}
+
+.card__text {
+  display: grid;
+  gap: 27px;
+  font-family: var(--main-font-family);
+  font-weight: var(--normal-font-weight);
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.card__buttons {
+  display: flex;
+  gap: 12px;
+  justify-self: end;
+  align-items: center;
+}
+
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 2px solid transparent;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: outline 0.3s ease;
+  block-size: 36px;
+  cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+}
+
+.card__like-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  border: 2px solid var(--accent-color);
+  inline-size: 130px;
+  block-size: 40px;
+  padding: 0;
+  transition: color 0.5s;
+}
+
+.card__like-button:hover {
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.card__like-button::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0px;
+  inset-block-start: 0px;
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: var(--accent-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before {
+  width: 100%;
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px var(--accent-color);
+}
+
+.button__text {
+  font-family: var(--accent-font-family);
+  font-weight: var(--normal-font-weight);
+  color: var(--button-color);
+  mix-blend-mode: difference;
+  font-size: 14px;
+  line-height: 12px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.save-button {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  inline-size: clamp(19.125rem, 17.054rem + 4.32vw, 20.938rem);
+  padding: 15px 18px;
+  background-color: var(--main-color);
+  border: 2px solid var(--accent-color);
+  transition: color 0.5s;
+}
+
+.save-button:hover {
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.save-button::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0px;
+  inset-block-start: 0px;
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: var(--accent-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.save-button:hover::before {
+  width: 100%;
+}
+
+.save-button:focus {
+  outline: none;
+  box-shadow: 2px 2px var(--accent-color);
+}
+
+.save-button__text {
+  font-family: var(--accent-font-family);
+  font-weight: var(--normal-font-weight);
+  color: var(--button-color);
+  mix-blend-mode: difference;
+  font-size: 14px;
+  line-height: 12px;
+  text-wrap: nowrap;
+}
+
+.floppy-icon {
+  color: var(--button-color);
+  mix-blend-mode: difference;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.floppy-icon__save-button {
+  inline-size: 21px;
+  block-size: 21px;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.contour {
+  fill: var(--contour-color);
+  transition: fill 0.1s linear;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s linear 0.3s;
+}
+
+.sparks {
+  fill: var(--sparks-color);
+  opacity: 0%;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.card__icon-button:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.card__icon-button:active .core {
+  fill: var(--core-color);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--main-body-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.card__icon-button .is-liked .core {
+  fill: var(--core-color);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button .is-liked .main-body {
+  fill: var(--main-body-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.card__icon-button .is-liked .contour {
+  fill: var(--main-body-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.card__icon-button .is-liked .heart {
+  animation: blob 0.3s ease-in 0.1s;  
+  transform-origin: center;
+}
+
+@keyframes blob {
+  from {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5)
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.card__icon-button .is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s;  
+  transform-origin: center;
+}
+
+@keyframes sparks {
+  from {
+    opacity: 0%;
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 0%;
+  }
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+
+.dialog[open] {
+  vertical-align: middle;
+  display: flex;
+  inline-size: 353px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  background-color: var(--main-color);
+  border: 2px solid var(--accent-color);
+}
+
+dialog::backdrop {
+  background-color: #000000;
+  opacity: 75%;
+}
+
+.save__text {
+  display: flex;
+  gap: 20px;
+  justify-self: center;
+  align-items: center;
+  inline-size: 293px;
+}
+
+.floppy-icon__popup {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.save__header {
+  font-family: var(--accent-font-family);
+  font-weight: var(--normal-font-weight);
+  color: var(--accent-color);
+  font-size: 14px;
+  line-height: 21px;
+  text-wrap: wrap;
+}
+
+svg:not(:root) {
+  overflow-clip-margin: border-box;
+  overflow: visible;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.dialog-button{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  inline-size: clamp(16.063rem, 13.491rem + 5.36vw, 18.313rem);
+  padding: 15px 18px;
+  background-color: var(--main-color);
+  border: 2px solid var(--accent-color);
+  transition: color 0.5s;
+}
+
+.dialog-button:hover {
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.dialog-button::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0px;
+  inset-block-start: 0px;
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: var(--accent-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.dialog-button:hover::before {
+  width: 100%;
+}
+
+.dialog-button:focus {
+  outline: none;
+  box-shadow: 2px 2px var(--accent-color);
+}
+
+.dialog-button__text {
+  font-family: var(--accent-font-family);
+  font-weight: var(--normal-font-weight);
+  color: var(--button-color);
+  mix-blend-mode: difference;
+  font-size: 14px;
+  line-height: 12px;
+  text-wrap: nowrap;
+  text-transform: uppercase;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */

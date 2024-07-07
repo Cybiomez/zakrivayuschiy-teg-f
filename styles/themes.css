@@ -10,13 +10,38 @@
 :root.theme-dark {
     /* ------------- font settings ------------- */
    
-    --paragraph-font-weight: 465;
-    --header-font-weight: 785;
+    --normal-font-weight: 465;
+    --bold-font-weight: 785;
 
     /* ------------- color settings ------------- */
 
-    --backgroumnd-color: #000000;
+    --main-color: #000000;
     --accent-color: #00CC14;
+
+    --background-image: 
+    repeating-linear-gradient(
+        to right, 
+        #000,
+        #000 2px, 
+        transparent 2px, 
+        transparent 4px), 
+      repeating-linear-gradient(
+        to bottom, 
+        #000,
+        #000 2px, 
+        transparent 2px, 
+        transparent 4px), 
+      repeating-linear-gradient(
+        #007f0c,
+        #004306);
+
+    --stroke-color: #000000;
+    --button-color: #00CC14;
+    
+    --contour-color: #00CC14;
+    --main-body-color: #f20000;
+    --core-color: #f20000;
+    --sparks-color: #f20000;
 
     /* ------------------------------------------ */
 }
@@ -26,13 +51,38 @@
 :root.theme-light {
     /* ------------- font settings -------------- */
    
-    --paragraph-font-weight: 400;
-    --header-font-weight: 700;
+    --normal-font-weight: 400;
+    --bold-font-weight: 700;
     
     /* ------------- color settings ------------- */
 
-    --backgroumnd-color: #FFFFFF;
+    --main-color: #FFFFFF;
     --accent-color: #000000;
+
+    --background-image: 
+    repeating-linear-gradient(
+        to right, 
+        #d3d3d3,
+        #d3d3d3 2px, 
+        transparent 2px, 
+        transparent 4px), 
+      repeating-linear-gradient(
+        to bottom, 
+        #d3d3d3,
+        #d3d3d3 2px, 
+        transparent 2px, 
+        transparent 4px), 
+      repeating-linear-gradient(
+        #e7e7e7 0.1%,
+        #1a1a1a);
+
+    --stroke-color: #FFFFFF;
+    --button-color: #FFFFFF;
+
+    --contour-color: #000000;
+    --main-body-color: #f20000;
+    --core-color: #f20000;
+    --sparks-color: #f20000;
 
     /* ------------------------------------------ */
 }
@@ -43,13 +93,38 @@
     :root.theme-auto {
         /* ------------- font settings ------------- */
        
-        --paragraph-font-weight: 465;
-        --header-font-weight: 785;
+        --normal-font-weight: 465;
+        --bold-font-weight: 785;
         
         /* ------------- color settings ------------- */
     
-        --backgroumnd-color: #000000;
+        --main-color: #000000;
         --accent-color: #00CC14;
+        
+        --background-image: 
+        repeating-linear-gradient(
+            to right, 
+            #000,
+            #000 2px, 
+            transparent 2px, 
+            transparent 4px), 
+          repeating-linear-gradient(
+            to bottom, 
+            #000,
+            #000 2px, 
+            transparent 2px, 
+            transparent 4px), 
+          repeating-linear-gradient(
+            #007f0c,
+            #004306);
+
+        --stroke-color: #000000;
+        --button-color: #00CC14;
+
+        --contour-color: #00CC14;
+        --main-body-color: #f20000;
+        --core-color: #f20000;
+        --sparks-color: #f20000;
     
         /* ------------------------------------------ */
     }

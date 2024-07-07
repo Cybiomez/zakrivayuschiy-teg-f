@@ -3,18 +3,50 @@
 
 :root {
 
-    /* ------------- font settings ------------- */
+    /* ------------- font settings -------------- */
    
-    --main-font-family: 'Inter-Variable';
-    --accent-font-family: 'PressStart2P';
+    --main-font-family: 'Inter-Variable', sans-serif;
+    --accent-font-family: 'PressStart2P-Regular', sans-serif;
 
-    --paragraph-font-weight: 400;
-    --header-font-weight: 700;
+    --normal-font-weight: 400;
+    --bold-font-weight: 700;
     
     /* ------------- color settings ------------- */
 
-    --backgroumnd-color: #FFFFFF;
+    --main-color: #FFFFFF;
     --accent-color: #000000;
+    
+    --background-image: 
+    repeating-linear-gradient(
+        to right, 
+        #d3d3d3,
+        #d3d3d3 2px, 
+        transparent 2px, 
+        transparent 4px), 
+      repeating-linear-gradient(
+        to top, 
+        #d3d3d3,
+        #d3d3d3 2px, 
+        transparent 2px, 
+        transparent 4px), 
+      repeating-linear-gradient(
+        #e7e7e7 0.1%,
+        #1a1a1a);
+
+    
+    --stroke-color: #FFFFFF;
+    --button-color: #FFFFFF;
+
+    --contour-color: #000000;
+    --main-body-color: #f20000;
+    --core-color: #f20000;
+    --sparks-color: #f20000;
+    
+
+    /* ------------- size settings ------------- */
+
+    --content-section__inline-size: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
+    --header__block-size: clamp(20.438rem, 17.509rem + 6.1vw, 23rem); 
 
     /* ------------------------------------------ */
 
