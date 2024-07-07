@@ -43,7 +43,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--font-variation-settings);
+  font-variation-settings: "wght" var(--normal-font-weight);
 }
 
 .content-section__inline-size {
@@ -198,7 +198,7 @@
 
 .card__title {
   padding: 3px 10px;
-  font-weight: var(--bold-font-weight);
+  font-variation-settings: "wght" var(--bold-font-weight);
   font-family: var(--main-font-family);
   font-size: 18px;
   line-height: 24px;
@@ -245,7 +245,7 @@
   display: grid;
   gap: 27px;
   font-family: var(--main-font-family);
-  font-weight: var(--normal-font-weight);
+  font-variation-settings: "wght"  var(--normal-font-weight);
   font-size: 18px;
   line-height: 21px;
   letter-spacing: 1px;
