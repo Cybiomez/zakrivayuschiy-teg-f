@@ -90,7 +90,7 @@
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
   @media (prefers-color-scheme: dark) {
-    :root.theme-auto {
+    :root {
         /* ------------- font settings ------------- */
        
         --normal-font-weight: 465;
@@ -127,6 +127,47 @@
         --sparks-color: #f20000;
     
         /* ------------------------------------------ */
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      /* ------------- font settings -------------- */
+     
+      --normal-font-weight: 400;
+      --bold-font-weight: 700;
+      
+      /* ------------- color settings ------------- */
+  
+      --main-color: #FFFFFF;
+      --accent-color: #000000;
+  
+      --background-image: 
+      repeating-linear-gradient(
+          to right, 
+          #d3d3d3,
+          #d3d3d3 2px, 
+          transparent 2px, 
+          transparent 4px), 
+        repeating-linear-gradient(
+          to bottom, 
+          #d3d3d3,
+          #d3d3d3 2px, 
+          transparent 2px, 
+          transparent 4px), 
+        repeating-linear-gradient(
+          #e7e7e7 0.1%,
+          #1a1a1a);
+  
+      --stroke-color: #FFFFFF;
+      --button-color: #FFFFFF;
+  
+      --contour-color: #000000;
+      --main-body-color: #f20000;
+      --core-color: #f20000;
+      --sparks-color: #f20000;
+  
+      /* ------------------------------------------ */
     }
   }
 

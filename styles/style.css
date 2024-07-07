@@ -58,7 +58,7 @@
   border: 2px solid var(--accent-color);
   font-family: var(--accent-font-family);
   background-color: var(--main-color);
-  block-size: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
+  /*block-size: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);*/
 }
 
 .header-logo-group {
@@ -69,6 +69,9 @@
 }
 
 .logo-link {
+  font-weight: var(--normal-font-weight);
+  font-size: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
+  line-height: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
   text-decoration: none;
 }
 
@@ -76,12 +79,6 @@
   border: none;
   box-shadow: none;
   outline: none;
-}
-
-.logo-text {
-  font-weight: var(--normal-font-weight);
-  font-size: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
-  line-height: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
 }
 
 .header-title {
@@ -160,16 +157,7 @@
   line-height: 16px;
   animation: pointer 0.5s alternate ease-in-out infinite;
   inset-inline-start: -15px;
-}
-
-@keyframes pointer {
-  from {
-    inset-inline-start: -15px;
-  }
-
-  to {
-    inset-inline-start: -11px;
-  }
+  inset-block-start: 0;
 }
 
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -258,15 +246,6 @@
   letter-spacing: 1px;
 }
 
-.card-8 .card__text {
-  line-height: 22.5px;
-  letter-spacing: 0px;
-}
-
-.card-2 .card__text {
-  letter-spacing: 0px;
-}
-
 .card__buttons {
   display: flex;
   justify-self: end;
@@ -296,6 +275,17 @@
 }
 
 .card__like-button {
+  inline-size: 130px;
+  block-size: 40px;
+}
+
+.card__like-button {
+  text-transform: uppercase;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.button {
   position: relative;
   display: flex;
   justify-content: center;
@@ -304,16 +294,14 @@
   padding: 0;
   background-color: var(--main-color);
   transition: color 0.5s;
-  inline-size: 130px;
-  block-size: 40px;
 }
 
-.card__like-button:hover {
+.button:hover {
   color: var(--main-color);
   cursor: pointer;
 }
 
-.card__like-button::before {
+.button::before {
   content: '';
   position: absolute;
   display: block;
@@ -325,11 +313,11 @@
   inset-block-start: 0px;
 }
 
-.card__like-button:hover::before {
+.button:hover::before {
   width: 100%;
 }
 
-.card__like-button:focus {
+.button:focus {
   box-shadow: 2px 2px var(--accent-color);
   outline: none;
 }
@@ -341,7 +329,6 @@
   font-weight: var(--normal-font-weight);
   font-size: 14px;
   line-height: 12px;
-  text-transform: uppercase;
   mix-blend-mode: difference;
 }
 
@@ -352,52 +339,13 @@
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 .save-button {
-  position: relative;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   gap: 8px;
-  border: 2px solid var(--accent-color);
   padding: 15px 18px;
-  background-color: var(--main-color);
-  transition: color 0.5s;
   inline-size: clamp(19.125rem, 17.054rem + 4.32vw, 20.938rem);
 }
 
-.save-button:hover {
-  color: var(--main-color);
-  cursor: pointer;
-}
-
-.save-button::before {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 0%;
-  height: 100%;
-  background-color: var(--accent-color);
-  transition: width 0.5s ease-in-out;
-  inset-inline-start: 0px;
-  inset-block-start: 0px;
-}
-
-.save-button:hover::before {
-  width: 100%;
-}
-
-.save-button:focus {
-  box-shadow: 2px 2px var(--accent-color);
-  outline: none;
-}
-
 .save-button__text {
-  color: var(--button-color);
-  font-family: var(--accent-font-family);
-  font-weight: var(--normal-font-weight);
-  font-size: 14px;
-  line-height: 12px;
-  mix-blend-mode: difference;
   text-wrap: nowrap;
 }
 
@@ -486,37 +434,9 @@
   animation: blob 0.3s ease-in 0.1s;
 }
 
-@keyframes blob {
-  from {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.5);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
 .card__icon-button .is-liked .sparks {
   transform-origin: center;
   animation: sparks 0.3s ease-in 0.3s;
-}
-
-@keyframes sparks {
-  from {
-    opacity: 0%;
-  }
-
-  50% {
-    opacity: 100%;
-  }
-
-  to {
-    opacity: 0%;
-  }
 }
 
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -575,54 +495,12 @@ svg:not(:root) {
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 .dialog-button {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border: 2px solid var(--accent-color);
   padding: 15px 18px;
-  background-color: var(--main-color);
-  transition: color 0.5s;
-  inline-size: clamp(16.063rem, 13.491rem + 5.36vw, 18.313rem);
-}
-
-.dialog-button:hover {
-  color: var(--main-color);
-  cursor: pointer;
-}
-
-.dialog-button::before {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 0%;
-  height: 100%;
-  background-color: var(--accent-color);
-  transition: width 0.5s ease-in-out;
-  inset-inline-start: 0px;
-  inset-block-start: 0px;
-}
-
-.dialog-button:hover::before {
-  width: 100%;
-}
-
-.dialog-button:focus {
-  box-shadow: 2px 2px var(--accent-color);
-  outline: none;
+  inline-size: 100%;
 }
 
 .dialog-button__text {
-  color: var(--button-color);
-  font-family: var(--accent-font-family);
-  font-weight: var(--normal-font-weight);
-  font-size: 14px;
-  line-height: 12px;
   text-transform: uppercase;
-  mix-blend-mode: difference;
-  text-wrap: nowrap;
 }
 
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -631,36 +509,32 @@ svg:not(:root) {
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-.card-1 .card__image {
-  filter: none;
-}
-
-.card-2 .card__image {
+.filter__grayscale {
   filter: grayscale(80%);
 }
 
-.card-3 .card__image {
+.filter__saturate {
   filter: saturate(300%);
   
 }
 
-.card-4 .card__image {
+.filter__saturate_contrast_sepia {
   filter: saturate(180%) contrast(120%) sepia(0.5);
 }
 
-.card-5 .card__image {
+.filter__invert {
   filter: invert(80%);
 }
 
-.card-6 .card__image {
+.filter__saturate_sepia {
   filter: saturate(180%) sepia(0.9);
 }
 
-.card-7 .card__image {
+.filter__blur {
   filter: blur(10px);
 }
 
-.card-8 .card__image {
+.filter__hue-rotate_sepia_blur {
   filter: hue-rotate(0.2turn) sepia(0.5) blur(2px);
 }
 
