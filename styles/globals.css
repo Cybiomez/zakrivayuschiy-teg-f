@@ -10,6 +10,8 @@
 
 body {
   margin: 0;
+  font-family: var(--main-font-family);
+  font-variation-settings: "wght" var(--normal-font-weight);
 }
 
 h1,
