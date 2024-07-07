@@ -29,7 +29,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font-family);
-  font-variation-settings: var(--normal-font-weight);
+  font-variation-settings: "wght" var(--normal-font-weight);
   background-color: var(--main-color);
   color: var(--accent-color);
   background: var(--background-image);
@@ -78,7 +78,7 @@
   box-shadow: none;
 }
 
-.logo-text{
+.logo-text {
   font-weight: var(--normal-font-weight);
   font-size: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
   line-height: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
@@ -96,9 +96,6 @@
   justify-self: center;
 }
 
-.header__theme-menu {
-
-}
 
 .theme-menu__list {
   display: grid;
@@ -106,10 +103,6 @@
   padding-inline-start: 18px;
   gap: clamp(0.5rem, 0.456rem + 0.19vw, 0.625rem);
   margin: 25px;
-}
-
-.theme-menu__item {
-  
 }
 
 .theme-menu__button {
@@ -154,9 +147,6 @@
 
  .theme-menu__button:disabled {
   transition: opacity 0.3s;
- }
-
- .theme-menu__button:disabled {
   opacity: 60%;
   pointer-events: none;
  }
@@ -205,9 +195,6 @@
   gap: 50px;
 }
 
-.card-list__item {
-  
-}
 
 .card {
   background-color: var(--main-color);
@@ -271,12 +258,12 @@
   letter-spacing: 1px;
 }
 
-.card-8 .card__text{
+.card-8 .card__text {
   letter-spacing: 0px;
   line-height: 22.5px;
 }
 
-.card-2 .card__text{
+.card-2 .card__text {
   letter-spacing: 0px;
 }
 
@@ -495,7 +482,7 @@
 }
 
 .card__icon-button .is-liked .heart {
-  animation: blob 0.3s ease-in 0.1s;  
+  animation: blob 0.3s ease-in 0.1s;
   transform-origin: center;
 }
 
@@ -514,7 +501,7 @@
 }
 
 .card__icon-button .is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s;  
+  animation: sparks 0.3s ease-in 0.3s;
   transform-origin: center;
 }
 
@@ -587,7 +574,7 @@ svg:not(:root) {
 
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-.dialog-button{
+.dialog-button {
   position: relative;
   display: flex;
   flex-wrap: wrap;
