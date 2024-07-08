@@ -238,7 +238,7 @@
 .card__content {
   display: grid;
   gap: 25px;
-  padding: 24px;
+  padding: 20px 25px;
 }
 
 .card__text {
@@ -248,7 +248,6 @@
   font-variation-settings: "wght" var(--normal-font-weight);
   font-size: 18px;
   line-height: 21px;
-  letter-spacing: 1px;
 }
 
 .card__buttons {
@@ -486,6 +485,7 @@ dialog::backdrop {
   font-size: 14px;
   line-height: 21px;
   text-wrap: wrap;
+  text-transform: uppercase;
 }
 
 svg:not(:root) {
